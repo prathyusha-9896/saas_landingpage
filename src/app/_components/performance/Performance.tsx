@@ -1,0 +1,37 @@
+'use client'
+
+import usePerformance from './hooks/usePerformance'
+import Image from 'next/image'
+export default function Performance() {
+  const { title, subtitle, pillars } = usePerformance()
+
+  return (
+    <section className="bg-black text-white px-4 py-16 md:px-12 lg:px-20">
+      <div className="max-w-5xl mx-auto text-center mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold">{title}</h2>
+        <p className="text-gray-400 mt-2">{subtitle}</p>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+        {pillars.map((pillar, idx) => (
+          <div
+            key={idx}
+            className="bg-[#0D1321] rounded-xl p-6 border border-zinc-800 hover:border-zinc-600 transition"
+          >
+            <Image
+            src={pillar.icon}
+            alt={pillar.title}
+            width={32}
+            height={32}
+            className={`mb-4 ${pillar.textcolor}`}
+            />
+            <h3 className={`text-lg font-semibold mb-2 ${pillar.textcolor}` }>
+              {pillar.title}
+            </h3>
+            <p className="text-gray-400 text-sm">{pillar.description}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  )
+}

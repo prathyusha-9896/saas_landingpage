@@ -1,6 +1,6 @@
 'use client'
 import CustomButton from '../custombutton/CustomButton'
-import logo from '../../../public/Images/logo.png'
+import logo from '../../../public/assets/Images/logo.png'
 import Image from 'next/image';
 export default function Header() {
   return (
