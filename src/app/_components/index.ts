@@ -1,0 +1,1 @@
+export { default as Accelerate } from './accelerate/Accelerate'
