@@ -1,10 +1,15 @@
 import {
   Accelerate,
+  Faqs,
+  Founders,
+  Growth,
   Hello,
+  LetsWork,
   Performance,
   Proven,
   Saas,
-  Services
+  Services,
+  Tools
 } from './_components'
 
 export default function Home() {
@@ -16,6 +21,11 @@ export default function Home() {
       <Proven/>
       <Saas/>
       <Hello/>
+      <Tools/>
+      <Founders/>
+      <Growth/>
+      <LetsWork/>
+      <Faqs/>
     </>
   )
 }
