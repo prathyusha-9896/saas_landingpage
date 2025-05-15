@@ -8,7 +8,7 @@ export default function Growth() {
   const { GROWTH_STEPS } = useGrowth()
 
   return (
-    <div className="bg-[#02050E] px-56 py-20 flex gap-16">
+    <div className="bg-[#02050E] px-6 md:px-56 py-20 flex gap-16">
       {/* LEFT COLUMN */}
       <div className="flex-1 flex flex-col">
         {/* Sticky Title + Subheading */}
@@ -41,7 +41,7 @@ export default function Growth() {
       </div>
 
       {/* RIGHT COLUMN: Sticky Image */}
-      <div className="w-[328px] h-fit sticky top-24">
+      <div className="w-[328px] h-fit sticky top-24 hidden md:block">
         <Image
           src={growthImg}
           alt="Growth Visual"

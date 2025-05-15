@@ -6,7 +6,7 @@ const useSaas = () => {
     subheading:
       'SaaS teams work with me because I make conversions make sense. No fluff — just smart tweaks, better UX, and results you can actually see.',
     cta: {
-      text: 'Let’s Optimize My Funnel',
+      text: 'Book a Call',
       link: '#', // replace with actual URL
     },
     pillars: [

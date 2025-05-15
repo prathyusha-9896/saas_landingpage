@@ -19,6 +19,7 @@ export default function Founders() {
     return () => clearInterval(interval)
   }, [])
 
+
   useEffect(() => {
     if (wrapperRef.current) {
       const cardWidth = wrapperRef.current.firstElementChild?.clientWidth || 0
@@ -35,7 +36,7 @@ export default function Founders() {
           wrapperRef.current.scrollTo({ left: 0, behavior: 'auto' })
         }
         setCurrent(0)
-      }, 700) // after smooth scroll ends
+      }, 3000) // after smooth scroll ends
     }
   }, [current, testimonials.length])
 
@@ -49,53 +50,58 @@ export default function Founders() {
         </div>
 
         {/* Right Column - Slider */}
-        <div
-          ref={wrapperRef}
-          className="md:w-2/3 flex gap-4 md:gap-6 overflow-hidden"
-          style={{ scrollSnapType: 'x mandatory' }}
-        >
+        <div className=''>
+          <div
+            ref={wrapperRef}
+            className="flex gap-4 md:gap-6 overflow-x-auto md:overflow-hidden"
+            style={{ scrollSnapType: 'x mandatory' }}
+          >
           {slides.map((t, index) => (
-            <div
-              key={index}
-              className={`w-[538px] shrink-0 snap-start transition-opacity duration-700 ${
-                index % testimonials.length === current % testimonials.length
-                  ? 'opacity-100'
-                  : index % testimonials.length === (current + 1) % testimonials.length
-                  ? 'opacity-40'
-                  : 'opacity-0'
-              }`}
-            >
+              <div
+                key={index}
+                className={`w-[45%] md:w-[60%] shrink-0 snap-start transition-opacity duration-700 ${
+                  index % testimonials.length === current % testimonials.length
+                    ? 'opacity-100'
+                    : index % testimonials.length === (current + 1) % testimonials.length
+                    ? 'opacity-40 md:opacity-40'
+                    : 'opacity-0 md:opacity-0'
+                }`}
+              >
+
             <div className="rounded-[10px] p-[1px] bg-gradient-to-r from-[#31220d] via-[#5a3a06] to-[#FF9900]">
-            <div className="bg-[#111827] rounded-[10px] p-6 md:p-8 h-full flex flex-col justify-between text-white">
-                <p className="text-sm text-gray-300 italic mb-6">“{t.message}”</p>
-                <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
+              <div className="bg-[#111827] rounded-[10px] p-4 md:p-8 h-full flex flex-col justify-between text-white">
+                <p className="text-sm md:text-[13px] text-[#94A3B8] italic mb-6">“{t.message}”</p>
+                <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+                  <div className="flex items-center gap-3">
                     <Image
-                    src={t.authorAvatar}
-                    alt={t.authorName}
-                    width={40}
-                    height={40}
-                    className="rounded-full"
+                      src={t.authorAvatar}
+                      alt={t.authorName}
+                      width={40}
+                      height={40}
+                      className="rounded-full"
                     />
                     <div>
-                    <p className="text-sm font-semibold text-[#FDBA74]">{t.authorName}</p>
-                    <p className="text-xs text-gray-400">{t.authorRole}</p>
+                      <p className="text-sm font-semibold text-[#FDBA74]">{t.authorName}</p>
+                      <p className="text-xs text-gray-400">{t.authorRole}</p>
                     </div>
-                </div>
-                <Image
+                  </div>
+                  <Image
                     src={t.companyLogo}
                     alt="company"
                     width={80}
                     height={24}
                     className="object-contain"
-                />
+                  />
                 </div>
-            </div>
+              </div>
+
             </div>
 
             </div>
           ))}
         </div>
+        </div>
+
       </div>
     </section>
   )

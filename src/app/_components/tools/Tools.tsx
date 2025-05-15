@@ -9,14 +9,14 @@ export default function Tools() {
   return (
     <section className="bg-[#02050E] text-white py-20 px-6">
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold">{heading}</h2>
-        <p className="text-gray-400 mt-2 text-sm">{subheading}</p>
+        <h2 className="text-3xl md:text-5xl leading-10 tracking-[-0.62px] font-semibold">{heading}</h2>
+        <p className="text-[#94A3B8] text-[14px] md:text-[16px] leading-[22px] font-normal mt-2 ">{subheading}</p>
       </div>
 
-<div className="relative overflow-hidden px-6 md:px-20 lg:px-56">
+<div className="relative overflow-hidden px-0 md:px-20 lg:px-56">
   {/* Left & Right Gradient Overlays */}
-  <div className="pointer-events-none absolute top-0 left-[15%] h-full w-[344px] z-20 bg-gradient-to-r from-[#02050E] to-transparent" />
-  <div className="pointer-events-none absolute top-0 right-[15%] h-full w-[344px] z-20 bg-gradient-to-l from-[#02050E] to-transparent" />
+  <div className="hidden md:block pointer-events-none absolute top-0 left-[15%] h-full w-[344px] z-20 bg-gradient-to-r from-[#02050E] to-transparent" />
+  <div className="hidden md:block pointer-events-none absolute top-0 right-[15%] h-full w-[344px] z-20 bg-gradient-to-l from-[#02050E] to-transparent" />
 
   {/* Scrolling Tool Rows */}
   <div className="space-y-3 relative z-10">

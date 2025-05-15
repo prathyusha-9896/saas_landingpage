@@ -8,16 +8,16 @@ export default function Services() {
   return (
     <section className="bg-black text-white px-6 py-16 md:px-12 lg:px-20">
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold">{heading}</h2>
+        <h2 className="text-3xl md:text-4xl font-semibold">{heading}</h2>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-7xl mx-auto">
         {services.map((service, idx) => (
           <div key={idx} className="flex flex-col items-start">
-            <h3 className={`text-xl font-semibold mb-2 ${service.color}`}>
+            <h3 className={`text-[14px] md:text[16px] md:leading-7 leading-[22px] font-semibold mb-2 text-white`}>
               {service.title}
             </h3>
-            <p className="text-gray-400 mb-4 text-sm">{service.description}</p>
+            <p className="text-gray-400 mb-4 text-[13px] leading-[22px] font-normal">{service.description}</p>
 
             <div className="flex flex-wrap gap-3 mt-auto">
               {service.tools.map((tool, i) => (

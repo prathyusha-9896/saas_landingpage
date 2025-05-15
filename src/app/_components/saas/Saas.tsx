@@ -1,5 +1,6 @@
 'use client'
 
+import { FaArrowRightLong } from 'react-icons/fa6'
 import useSaas from './hooks/useSaas'
 import Image from 'next/image'
 
@@ -15,9 +16,9 @@ export default function Saas() {
         <p className="text-gray-400 mt-2 max-w-2xl text-sm">{subheading}</p>
         <a
           href={cta.link}
-          className="bg-yellow-400 hover:bg-yellow-300 transition text-black font-medium px-5 py-3 rounded shadow w-fit text-sm"
+          className="bg-[#FF9900] flex justify-center items-center gap-3 transition text-black font-medium px-5 py-3 rounded shadow w-fit text-sm"
         >
-          {cta.text} →
+          {cta.text} <span><FaArrowRightLong size={15} /></span>
         </a>
       </div>
 
@@ -29,10 +30,10 @@ export default function Saas() {
               alt={pillar.title}
               className="w-7 h-7 mb-3"
             />
-            <h3 className={`font-semibold mb-2 ${pillar.color}`}>
+            <h3 className={`font-semibold text-[16px] leading-[26px] mb-2 ${pillar.color}`}>
               {pillar.title}
             </h3>
-            <p className="text-gray-400 text-sm">{pillar.description}</p>
+            <p className="text-gray-400  text-[13px] leading-5">{pillar.description}</p>
           </div>
         ))}
       </div>

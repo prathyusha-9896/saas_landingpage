@@ -21,8 +21,8 @@ const useAccelerate = () => {
       { label: "Full Name", placeholder: "e.g. Sarah Johnson", required: true },
       { label: "Business Email", placeholder: "e.g. you@company.com", required: true },
       { label: "Company Website URL", placeholder: "e.g. https://yourcompany.com", required: true },
-      { label: "Current Funnel", placeholder: "e.g. CRM, Analytics, Automation, Integrations", required: false },
-      { label: "What’s blocking growth right now?", placeholder: "e.g. Low demo bookings, drop-off after signup, unclear value prop", required: false },
+      { label: "Services", placeholder: "e.g. Paid Marketing, SEO, Conversion Rate Optimisation", required: true },
+      { label: "What’s blocking growth right now?", placeholder: "e.g. “Low demo bookings, drop-off after signup, unclear value prop”", required: false },
     ],
     cta: "Get My Free Audit",
   }

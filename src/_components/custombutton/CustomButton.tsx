@@ -8,7 +8,7 @@ export default function CustomButton({
   return (
     <Button
       variant="contained"
-      className={`!bg-[#FF9900] !text-[#01050E] !capitalize !rounded-lg !py-2 !px-4 sm:!px-6 text-sm sm:!text-[15px] !font-roboto whitespace-nowrap ${btnClass}`}
+      className={`!bg-[#FF9900] !text-[#01050E] !capitalize !rounded-lg !py-2 !px-4 sm:!px-6 text-[11px] sm:!text-[15px] !font-roboto !font-semibold whitespace-nowrap ${btnClass}`}
       endIcon={
         icon && <img src={icon} alt="icon" className="max-w-full max-h-full" />
       }
