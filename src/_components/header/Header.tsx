@@ -2,6 +2,7 @@
 import CustomButton from '../custombutton/CustomButton'
 import logo from '../../../public/logo.svg'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Header() {
   return (
@@ -10,19 +11,21 @@ export default function Header() {
         <div className="flex justify-between items-center py-3">
           {/* Logo */}
           <div className="w-40">
+            <Link href='/'>
             <Image
               src={logo}
               alt="logo-img"
               className="w-full h-auto"
               priority
             />
+            </Link>
           </div>
 
-          {/* CTA Button - visible on all screen sizes */}
+          {/* CTA Button */}
           <div className="flex gap-4 items-center">
-            <a href="">
+            <Link href="/book-a-call">
               <CustomButton btnText="Book Intro Call" />
-            </a>
+            </Link>
           </div>
         </div>
       </div>

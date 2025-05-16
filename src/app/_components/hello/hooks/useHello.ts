@@ -13,7 +13,7 @@ const useHello = () => {
       { value: 'ROI', label: 'Focused Strategies' },
     ],
     profileImage: '/assets/Images/profile.webp', // must be inside /public/images/
-    linkedin: 'https://www.linkedin.com/in/shitanshu-dm', // replace with actual URL
+    linkedin: 'https://www.linkedin.com/in/shitanshu-kumar1/', // replace with actual URL
   }
 }
 

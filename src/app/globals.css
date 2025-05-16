@@ -63,3 +63,8 @@ body {
   background-color: #111827;
   overflow: hidden; /* Ensures content respects the border radius */
 }
+
+
+.calendly-inline-widget {
+  width: 100%;
+}

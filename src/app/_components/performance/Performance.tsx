@@ -16,16 +16,16 @@ export default function Performance() {
         {pillars.map((pillar, idx) => (
           <div
             key={idx}
-            className="bg-[#0D1321] rounded-xl p-6 border border-zinc-800 hover:border-zinc-600 transition"
+            className="bg-[#0D1321] rounded-xl p-9"
           >
             <Image
             src={pillar.icon}
             alt={pillar.title}
-            width={32}
-            height={32}
-            className={`mb-4 ${pillar.textcolor}`}
+            width={48}
+            height={48}
+            className={`mb-7 ${pillar.textcolor}`}
             />
-            <h3 className={`text-lg  font-semibold mb-2 ${pillar.textcolor}` }>
+            <h3 className={`text-lg  font-semibold mb-4 ${pillar.textcolor}` }>
               {pillar.title}
             </h3>
             <p className="text-gray-400 text-sm">{pillar.description}</p>

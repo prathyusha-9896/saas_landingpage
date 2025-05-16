@@ -10,7 +10,7 @@ const useProven = () => {
       description:
         'The business was getting many leads, but most weren’t turning into sales. There were too many unqualified leads.',
       buttonText: 'Schedule a strategy Session',
-      buttonLink: '#', // replace with actual URL
+      buttonLink: '/book-a-call', // replace with actual URL
       solutions: [
         'Right Search Terms: Fine-tuned targeting with high-intent keywords.',
         'Implemented a step-by-step strategy to help customers from interest to purchase.',

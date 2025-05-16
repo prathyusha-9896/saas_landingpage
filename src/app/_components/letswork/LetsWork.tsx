@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import useLetsWork from './hooks/useLetsWork'
 
 export default function LetsWork() {
@@ -25,9 +26,11 @@ export default function LetsWork() {
         </div>
 
         <div className="relative z-10 flex justify-center items-center gap-6">
-          <button className="bg-orange-400 hover:bg-orange-500 transition-all px-4 py-2 text-sm font-semibold text-black rounded-md">
+          <Link href="/book-a-call">
+            <button className="bg-orange-400 transition-all px-4 py-2 text-sm font-semibold text-black rounded-md">
             {buttonLabel}
           </button>
+          </Link>
           <h2 className="text-white text-5xl font-bold">{headingPart2}</h2>
         </div>
       </div>
@@ -49,9 +52,11 @@ export default function LetsWork() {
           {subtext}
         </p>
 
+      <Link href="/book-a-call">
         <button className="relative z-10 bg-[#FF9900] px-6 py-3 text-sm sm:text-base font-semibold text-black rounded-md">
           {buttonLabel}
         </button>
+      </Link>
       </div>
     </div>
   )

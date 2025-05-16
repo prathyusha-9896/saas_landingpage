@@ -17,12 +17,41 @@ export default function Accelerate() {
     cta,
   } = useAccelerate()
 
-  const [formData, setFormData] = useState({})
+  const [formData, setFormData] = useState<Record<string, string>>({})
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault()
+
+  // Map formData keys to match HubSpot field names
+const payload = {
+  firstname: formData['Full Name'] || '',
+  email: formData['Business Email'] || formData['Business email'] || formData['Email'] || '',  // capture all possible labels
+  website: formData['Company Website URL'] || '',
+  services: formData['Services'] || '',
+  growth_blocker: formData["What’s blocking growth right now?"] || ''
+}
+
+
+  try {
+    const res = await fetch('/api/submit-to-hubspot', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    })
+
+    const data = await res.json()
+    alert('✅ Form submitted to HubSpot successfully!')
+    console.log(data)
+  } catch (err) {
+    alert('❌ Submission failed. Try again.')
+    console.error('Error submitting to HubSpot:', err)
+  }
+}
+
 
   return (
-    <section className="bg-black text-white flex flex-col lg:flex-row p-6 md:p-[120px]">
+    <section className="bg-black text-white flex flex-col justify-center items-center lg:flex-row p-6 md:p-[120px]">
       {/* Left Side */}
-      <div className="flex-1 mb-12 lg:mb-0 lg:pr-16">
+      <div className="w-full lg:w-[60%] mb-12 lg:mb-0 lg:pr-36">
         <h1 className="text-[32px] md:text-5xl font-semibold font-jakarta leading-12 md:leading-16 mb-6 relative flex flex-wrap">
           {heading.split(' ').map((word, idx) => {
             if (word === 'Revenue') {
@@ -52,13 +81,18 @@ export default function Accelerate() {
         <ul className="space-y-2 mb-8">
           {bullets.map((point, idx) => (
             <li key={idx} className="flex items-center gap-2 " >
-              <span className="text-[#FF9900] md:text-xl text-sm">•</span>
+              <span >
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                  <circle cx="8" cy="8.5" r="8" fill="#FF9900" fill-opacity="0.2"/>
+                  <circle cx="8" cy="8.5" r="4" fill="#FF9900"/>
+                </svg>
+              </span>
               <span className='text-[#94A3B8] font-normal md:text-[13px] text-[9px] md:leading-6 leading-[18px]'>{point}</span>
             </li>
           ))}
         </ul>
 
-        <div className="flex gap-8 text-start">
+        <div className="flex md:gap-20 gap-8 text-start">
           {stats.map((stat, idx) => (
             <div key={idx}>
               <div className="md:text-3xl text-2xl font-normal leading-8 md:leading-11 text-[#FACC15]">{stat.value}</div>
@@ -80,7 +114,7 @@ export default function Accelerate() {
       </div>
 
       {/* Right Side Form */}
-      <div className="hidden md:block relative flex-1 p-8 rounded-xl shadow-lg text-white overflow-hidden bg-[#0F172A66] backdrop-blur-md">
+      <div className="hidden md:block relative  w-full lg:w-[40%]  flex-1 p-8 rounded-xl shadow-lg text-white overflow-hidden bg-[#0F172A66] backdrop-blur-md">
         {/* ORANGE GLOW (top-right) */}
         <div className="absolute top-[-150px] right-[-150px] w-[555px] h-[555px] bg-[#FF9900] rounded-full opacity-25 blur-[315px] pointer-events-none z-0" />
 
@@ -88,11 +122,11 @@ export default function Accelerate() {
         <div className="absolute bottom-[-150px] left-[-150px] w-[555px] h-[555px] bg-[#2F52A4] rounded-full opacity-25 blur-[315px] pointer-events-none z-0" />
 
         {/* CONTENT */}
-        <div className="relative z-10">
+        <div className="relative z-10 ">
           <h2 className="text-2xl font-semibold leading-9 tracking-[-0.5px] mb-2">{formTitle}</h2>
           <p className="text-[10px] font-normal leading-[22px] text-[#94A3B8] mb-6">{formSubtitle}</p>
 
-          <form className="space-y-7">
+          <form className="space-y-7" onSubmit={handleSubmit}>
             {/* First row: Full Name + Business Email */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[formFields[0], formFields[1]].map((field, idx) => (

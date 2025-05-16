@@ -71,14 +71,13 @@ export default function Founders() {
             <div className="rounded-[10px] p-[1px] bg-gradient-to-r from-[#31220d] via-[#5a3a06] to-[#FF9900]">
               <div className="bg-[#111827] rounded-[10px] p-4 md:p-8 h-full flex flex-col justify-between text-white">
                 <p className="text-sm md:text-[13px] text-[#94A3B8] italic mb-6">“{t.message}”</p>
-                <div className="flex flex-row items-center justify-between md:gap-4 gap-2">
-                  <div className="flex items-center md:gap-3 gap-0.5">
+                <div className="flex flex-row items-center justify-between ">
+                  <div className="flex items-center justify-center ">
                     <Image
                       src={t.authorAvatar}
                       alt={t.authorName}
-                      width={60}
-                      height={60}
-                      className="rounded-full"
+                      width={100} height={100}
+                      className='justify-center items-center flex'
                     />
                     <div>
                       <p className="md:text-sm text-[10px] font-semibold text-[#FDBA74]">{t.authorName}</p>

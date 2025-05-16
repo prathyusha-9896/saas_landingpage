@@ -7,7 +7,7 @@ const useSaas = () => {
       'SaaS teams work with me because I make conversions make sense. No fluff — just smart tweaks, better UX, and results you can actually see.',
     cta: {
       text: 'Book a Call',
-      link: '#', // replace with actual URL
+      link: '/book-a-call', // replace with actual URL
     },
     pillars: [
       {
