@@ -12,7 +12,7 @@ export default function Performance() {
         <p className="text-[#94A3B8] md:text-[#FFFFFFCC] md:text-[16px] md:leading-7 text-[14px] leading-[22px] font-normal mt-2">{subtitle}</p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 md:px-16 px-0 gap-6 max-w-6xl mx-auto">
         {pillars.map((pillar, idx) => (
           <div
             key={idx}

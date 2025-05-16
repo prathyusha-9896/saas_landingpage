@@ -6,8 +6,8 @@ export default function Services() {
   const { heading, services } = useServices()
 
   return (
-    <section className="bg-black text-white px-6 py-16 md:px-12 lg:px-20">
-      <div className="text-center mb-12">
+    <section className="bg-black text-white px-6 py-16 md:p-[120px]">
+      <div className="text-center mb-16">
         <h2 className="text-3xl md:text-4xl font-semibold">{heading}</h2>
       </div>
 

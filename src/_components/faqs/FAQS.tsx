@@ -17,7 +17,7 @@ export default function FAQS({ faqs }: FAQProps) {
   }
 
   return (
-    <div className="max-w-3xl mx-auto px-4 py-20">
+    <div className="max-w-7xl mx-auto px-4 py-16 ">
       <h2 className="text-white text-3xl font-semibold text-center mb-10">
         Frequently Asked Questions
       </h2>
@@ -26,21 +26,22 @@ export default function FAQS({ faqs }: FAQProps) {
         {faqs.map((item, index) => (
           <div
             key={index}
-            className="bg-[#0f172a66] rounded-lg text-white"
+            className={`rounded-lg text-white transition-colors duration-300 ${activeIndex === index ? 'bg-[#0f172a66]' : 'bg-transparent'}`}
           >
-            <button
-              onClick={() => toggle(index)}
-              className="w-full flex justify-between items-center text-left px-6 py-5 font-medium text-lg"
-            >
+          <button
+            onClick={() => toggle(index)}
+            className="w-full flex justify-between items-center text-left px-6 py-5 text-white font-[600] text-[14px] leading-[22px] md:text-[20px] md:leading-[32px] font-[Plus Jakarta Sans]"
+          >
+            <span className="flex-1 overflow-hidden text-ellipsis whitespace-nowrap md:whitespace-normal md:overflow-visible md:text-clip block leading-[22px] md:leading-[32px] text-white font-[600] text-[14px] md:text-[20px] font-[Plus Jakarta Sans]">
               {item.question}
-              <IoIosArrowUp
-                className={`ml-2 transition-transform ${
-                  activeIndex === index ? 'rotate-180' : ''
-                }`}
-              />
-            </button>
+            </span>
+            <IoIosArrowUp
+              className={`ml-2 shrink-0 transition-transform ${activeIndex === index ? 'rotate-180' : ''}`}
+            />
+          </button>
+
             {activeIndex === index && (
-              <div className="px-6 pb-5 text-sm text-gray-300">
+              <div className="px-6 pb-5 text-[#94A3B8] text-[13px] font-[400] leading-[20px] md:leading-[21.034px] font-[Plus Jakarta Sans]">
                 {item.answer}
               </div>
             )}

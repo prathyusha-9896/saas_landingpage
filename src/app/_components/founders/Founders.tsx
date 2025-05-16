@@ -59,7 +59,7 @@ export default function Founders() {
           {slides.map((t, index) => (
               <div
                 key={index}
-                className={`w-[45%] md:w-[60%] shrink-0 snap-start transition-opacity duration-700 ${
+                className={`w-[50%] md:w-[60%] shrink-0 snap-start transition-opacity duration-700 ${
                   index % testimonials.length === current % testimonials.length
                     ? 'opacity-100'
                     : index % testimonials.length === (current + 1) % testimonials.length
@@ -71,18 +71,18 @@ export default function Founders() {
             <div className="rounded-[10px] p-[1px] bg-gradient-to-r from-[#31220d] via-[#5a3a06] to-[#FF9900]">
               <div className="bg-[#111827] rounded-[10px] p-4 md:p-8 h-full flex flex-col justify-between text-white">
                 <p className="text-sm md:text-[13px] text-[#94A3B8] italic mb-6">“{t.message}”</p>
-                <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-                  <div className="flex items-center gap-3">
+                <div className="flex flex-row items-center justify-between md:gap-4 gap-2">
+                  <div className="flex items-center md:gap-3 gap-0.5">
                     <Image
                       src={t.authorAvatar}
                       alt={t.authorName}
-                      width={40}
-                      height={40}
+                      width={60}
+                      height={60}
                       className="rounded-full"
                     />
                     <div>
-                      <p className="text-sm font-semibold text-[#FDBA74]">{t.authorName}</p>
-                      <p className="text-xs text-gray-400">{t.authorRole}</p>
+                      <p className="md:text-sm text-[10px] font-semibold text-[#FDBA74]">{t.authorName}</p>
+                      <p className="md:text-xs text-[8px] text-gray-400">{t.authorRole}</p>
                     </div>
                   </div>
                   <Image
